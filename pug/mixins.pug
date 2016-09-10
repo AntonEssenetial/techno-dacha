@@ -1,0 +1,83 @@
+//- Navigation menu
+mixin nav(items)
+  ul.menu
+    each item, i in items
+      if i === pageId
+        li.menu__item.menu__item_active
+          a.menu__link(href=item.href)= item.name
+      else
+        li.menu__item
+          a.menu__link(href=item.href)= item.name
+
+
+//- Sandwitch
+mixin sandwitch()
+  button.toggle-menu.jsTag
+    .sandwitch
+      span.sw-topper
+      span.sw-bottom
+      span.sw-footer
+
+
+//- Bread
+mixin bread-crumbs(data)
+  .bread-crumbs
+    ul
+      each ent, num in data
+        if (num+1 < data.length)
+          li.bread-crumbs__item 
+            a(href="#").bread-crumbs__link= ent
+            .bread-crumbs__separator
+        else
+          li.bread-crumbs__item= ent
+
+
+//- Heading
+mixin heading(item)
+  if item[0]= item[0]
+    h2.section__content-h2= item[0]
+  if item[1]= item[1]
+    .section__content-text
+      p= item[1]
+      if item[2]= item[2]
+        p= item[2] 
+          if item[3]= item[3]
+            a(href='mailto:')= item[3]
+
+
+//- Acordion
+mixin acordion(items)
+  ul.jsNavgoco.acordion
+    each item in items
+      li.acordion__item 
+        a(href='#').acordion__link= item.title
+        ul.acordion__sub-item
+          h3= item.heading
+          span= item.span1
+          span= item.span2
+          span= item.span3
+          p= item.text
+          p= item.text
+
+
+//- Pagination
+mixin pagination
+  .pagination
+    ul
+      li
+        a(href="") 1
+      li
+        a(href="") 2
+      li.active
+        a(href="") 3
+      li
+        a(href="") 4
+      li
+        a(href="") 5
+      li ...
+      li
+        a(href="") 100
+      li.previous_page.disabled
+        a(href="") Назад
+      li.next_page 
+        a(href="") Далее
