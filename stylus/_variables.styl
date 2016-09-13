@@ -15,18 +15,23 @@ $IMG-PATH = '../images/background/'
 //   background-image image-url('logo.png')
 
 
+// Bdoy font 
+$body-font = ptsans
+
+
 // Container-wrapper-width 
-$container-wrapper-width = 1070px
+$container-wrapper-width = 1220px
+$container-wrapper-padding = 0 20px
 
 
 // Link - var
 $link-size = 14px
-$link-color = $red
+$link-color = $dark
 $link-hover-color = $hover
 
 
 // Text - var
-$text-size = 14px
+$text-size = 15px
 $text-color = $dark
 $text-padding = 20px
 $text-line-height = 23px
@@ -34,17 +39,18 @@ $text-line-height = 23px
 
 // Span - var
 $span-size = 14px
-$span-color = $white
+$span-color = $dark
 
 
 // Heading - sive 
 $h1 = 48px
-$h2 = 32px
-$h3 = 24px
-$h4 = 48px
-$h5 = 48px
+$h2 = 33px
+$h3 = 36px
+$h4 = 24px
+$h5 = 20px
 $h6 = 14px
 $h-weight = 100
+$h-color = $dark
 
 
 // Col
@@ -53,39 +59,40 @@ $col-margin = 30px
 
 // Label - input
 $input-size = 14px
-$input-color = grey
+$input-color = $dark
 $input-background = white
-$input-height = 38px
+$input-border-radius = 3px
+$input-height = 60px
 $input-margin = 10px 0 0 0 
 $label-margin = 0 0 20px 0
-$label-color = grey 
+$label-color = $dark 
 $label-size = 14px
-$input-padding = 10px
-$input-border-color = border
-$place-holder-default = grey
+$input-padding = 6px 10px 7px 10px
+$input-border-color = $border
+$place-holder-default = grey2
 input-border()
   border 1px solid $input-border-color
   &:focus 
-    border-color $dark
+    border-color $yellow
     color $dark
 
 
 // Banner color link 
-$banner-link-color = grey
+$banner-link-color = $dark
 
 
 // Buttons
-$button-radius = 10px
-$button-height = 35px
-$button-line-height = 33px
-$button-padding = 0px
+$button-radius = 3px
+$button-height = 34px
+$button-line-height = 32px
+$button-padding = 0 10px
 $button-size = 14px
-$button-color = white 
-$button-border = black 
-$button-background = black
+$button-color = $dark 
+$button-border = $yellow
+$button-background = $yellow
 $button-hover-color = black 
-$button-border-hover-color = white 
-$button-background-hover-color = white 
+$button-border-hover-color = $button-hover
+$button-background-hover-color = $button-hover
 $button-big-width = 200px
 
 
@@ -98,12 +105,37 @@ $button-big-width = 200px
 .container-wrapper 
   width $container-wrapper-width
   margin 0 auto
+  padding $container-wrapper-padding
+  position: relative
   
   
 // Fonts
 roboto = 'Roboto', sans-serif;
 ptsans = 'Pt sans', sans-serif;
-$placeholderFont = roboto
+$placeholderFont = $body-font
+
+
+// Colors
+dark          =  #333333
+yellow        =  #f8af12
+blue          =  #f5f8f9
+grey          =  #faf9f3
+soft          =  #f7fafc
+orange        =  #f17300
+green         =  #2a755a
+purple        =  purple 
+pink          =  pink
+red           =  #be000d
+brown         =  #151110
+milk          =  #e5e1d0
+gold          =  #d09700
+border        =  #c1bfb5
+border-grey   =  #484848
+button-hover  =  #fcb700
+dash-border   =  #ececec
+// //
+grey2         =  #a1a1a1
+grey3         =  #f8f8f8
 
 
 // Colors
@@ -114,45 +146,28 @@ $red = red
 $green = green 
 $black = black 
 $grey = grey 
+$grey2 = grey2
+$grey3 = grey3
 $orange = orange 
 $yellow = yellow
 $borwn = brown
-$hover = hover
+$hover = yellow
 $border = border
-
-
-// Colors
-dark          =  #0e0e0e
-yellow        =  #fbd71d
-blue          =  #228fe3
-grey          =  #646464
-grey2         =  #bababa
-grey3         =  #f8f8f8
-grey4         =  #656565
-grey5         =  #c1c1c1
-grey6         =  #ada29e
-soft          =  #f7fafc
-orange        =  #f17300
-green         =  #2dbb3c
-purple        =  purple 
-pink          =  pink
-red           =  #be000d
-brown         =  #151110
-milk          =  #e5e1d0
-border        =  #e2e2e2
-border-grey   =  #484848
+$button-hover = button-hover
+$gold = gold
 
 
 // Input colors - readonly - disabled - succes - error
-$BGreadonly    =  brown4
-$BGdisabled    =  #635d5a
-$BGDcolor      =  grey
-$readonly      =  brown6
-$disabled      =  milk
-$success       =  #2fa149
-$error         =  #c50018
-$information   =  #2057a0
-$worning       =  #9c7614
+$BGreadonly      =  #e6e6e6
+$BGdisabled      =  #e6e6e6
+$BGDcolor        =  #9f9f9f
+$border-disabled =  border-dash
+$readonly        =  $grey2
+$disabled        =  milk
+$success         =  #2fa149
+$error           =  #dd3e3e
+$information     =  #2057a0
+$worning         =  #9c7614
 
 
 // Color class
@@ -175,17 +190,27 @@ $worning       =  #9c7614
   display flex !important
 .jsContFlex 
   display none !important
-.jsTab 
 .jsTabDash
+.jsTab
   cursor pointer
-.jsCont 
+for i in (1..3)
+  .jsTab{i}
+    cursor pointer
+  .jsCont{i}
+    display none
+  .jsCont{i}.active
+    display block
+.jsCont
 .jsContDash 
   display none
-.jsCont.active
+.jsCont.active 
 .jsContDash.active 
   display block
 .jsNone
   display none
+.jsToggle.active
+  .jsFade
+    display block
   
 
 // Bx controls
@@ -197,13 +222,59 @@ $worning       =  #9c7614
     width 100%
     height 100% 
 
+
+// Custom functions
+decor()
+  text-decoration underline
+  &:hover 
+    text-decoration none
+trs()
+  transition ease-in-out .2s
+trs-slow()
+  transition ease-in-out .4s
+hover()
+  &:hover
+    color green
+    text-decoration: underline
+static()
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+vam($top = 0px, $margin = 0, $position = relative, $display = inline-block, $vertical-align = middle)
+  if $display
+    display $display
+  if $vertical-align
+    vertical-align $vertical-align
+  if $position
+    position $position
+  if $top 
+    top $top
+  if $margin 
+    margin $margin
+img()
+  display block
+img-width()
+  max-width 100%
+  width 100%
+  height auto
+
   
 // Disabled input
 input[type=text]:read-only
   box-shadow none !important
   background-color : $BGreadonly
   color      : $readonly
-  border 1px solid $readonly
+  border 1px solid border-dash
   &:focus
     border-color $readonly !important
     color $readonly
@@ -218,7 +289,7 @@ input[type=submit]:disabled,
 .select_disabled,
 .button_disabled
   background : $BGdisabled !important
-  border     : 1px solid $BGdisabled !important
+  border     : 1px solid $border-disabled !important
   color      : $BGDcolor
   cursor     : default !important
 .button_disabled:hover
@@ -228,11 +299,11 @@ input[type=submit]:disabled,
   curosor    : default !important
 .input_error
   border     : 1px solid $error !important
-  box-shadow : inset 0px 0px 0px 1px $error !important
+  // box-shadow : inset 0px 0px 0px 1px $error !important
   color      : $error !important
 .input_success 
   border     : 1px solid $success !important
-  box-shadow : inset 0px 0px 0px 1px $success !important
+  // box-shadow : inset 0px 0px 0px 1px $success !important
   color      : $success !important
 input[type=submit]:disabled
   color      : white
@@ -243,9 +314,10 @@ input[type=text]
 textarea
 select
   -webkit-appearance: none;
-  border-radius 0px
+  border-radius $input-border-radius
 input
 textarea
+  border-radius $input-border-radius
   margin 0px 
   border none
   font-family $placeholderFont
@@ -255,6 +327,7 @@ textarea
   font-size $input-size
   input-border()
 select
+  border-radius $input-border-radius
   background: $input-background
   margin 0px 
   border none
@@ -330,35 +403,37 @@ label i
 // Custom checkbox
 .label__checkbox
   margin 20px 0 0px 0 
-  color white
+  color dark
   font-size 14px 
   font-weight 200
   display flex
   line-height 20px
+  cursor pointer
 .label__checkbox i 
-  width 16px 
-  height @width 
-  border 1px solid grey
+  width 55px 
+  height 28px
   display inline-block
   position relative
-  vertical-align: middle
-  top 2px
-  margin 0 15px 0 0 
   box-flex: 1;
   flex: 0 0 auto;
+  border-radius (20px)
+  background: #eaeaea
+  cursor pointer
+  +after('')
+    width 28px 
+    height 28px 
+    background: #878787
+    border-radius (50%)
+    display block
+    trs()
+    margin-left 0px
 .label__checkbox .input__checkbox:checked + i
   border-color green2
-  &:after 
-    width 10px 
-    height 5px 
-    content ''
-    display block
-    position absolute
-    border-left 1px solid green2
-    border-bottom 1px solid green2
-    transform: rotate(-45deg);
-    top 2px
-    left 2px
+  &:after
+    margin-left 27px 
+    trs() 
+    background: yellow
+    
     
 
 // Pay radio button
@@ -423,6 +498,7 @@ button
   outline none
   background transparent
 .button
+  white-space: nowrap;
   background $button-background
   border-radius $button-radius
   height $button-height
@@ -444,24 +520,38 @@ button
 .button_big
   width $button-big-width
 .button_white
-  border-color white
-  color white
+  // border-color white
+  background-color white
 .button_red 
-  border-color $red 
-  color $red
+  // border-color $red 
+  background: $red
+  // color $red
 .button_green 
-  border-color $green
-  color $green
+  // border-color $green
+  background: $green
+  // color $green
 .button_blue 
-  border-color $blue
-  color $blue
+  // border-color $blue
+  background: $blue
+  // color $blue
 .button_yellow 
-  border-color $yellow 
-  color $yellow
+  // border-color $yellow 
+  background: $yellow 
+  // color $yellow
 .button_orange 
-  border-color $orange
-  color $orange
-
+  // border-color $orange
+  background: $orange
+  // color $orange
+.button_grey
+  border-color border
+  background: transparent
+  color dark
+.button_transparent
+  border 1px solid $grey
+  background: transparent
+  &:hover 
+    border-color $yellow
+    background: transparent
 
 // col 
 for i in (1..100)
@@ -484,19 +574,22 @@ for i in (1..100)
 // H heading 
 h1 
   font-size $h1
-  color white
+  color $h-color
 h2 
   font-size $h2
+  color $h-color
 h3 
   font-size $h3
+  color $h-color
 h4 
   font-size $h4
-  color grey
+  color $h-color
 h5 
   font-size $h5
+  color $h-color
 h6 
   font-size $h6
-  color grey
+  color $h-color
   
 
 // Elements
@@ -526,51 +619,12 @@ p
   padding-bottom $text-padding
   line-height $text-line-height
 
-
-// Custom functions
-decor()
-  text-decoration underline
-  &:hover 
-    text-decoration none
-trs()
-  transition ease-in-out .2s
-trs-slow()
-  transition ease-in-out .4s
-hover()
-  &:hover
-    color green
-    text-decoration: underline
-static()
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  -o-box-flex: 1;
-  box-flex: 1;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  -o-box-flex: 1;
-  box-flex: 1;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-vam($top = 0px, $margin = 0, $position = relative, $display = inline-block, $vertical-align = middle)
-  if $display
-    display $display
-  if $vertical-align
-    vertical-align $vertical-align
-  if $position
-    position $position
-  if $top 
-    top $top
-  if $margin 
-    margin $margin
-
     
 // Banner-link
 .banner__link 
   color $banner-link-color
   font-size 14px
+  display: block
     
 
 // Charts 
@@ -722,32 +776,24 @@ th
   opacity: 0
   top: 0
   transform: rotate(180deg)
-  
+ 
+
 // Bread
-// .bread-crumbs
-//   padding 30px 0
+.bread-crumbs
   
 
-//   &__item
-//     medium()
-//     color blue3 
-//     font-size 14px
-//     display: inline-block
-//     a 
-//       color blue
-//     &:last-child
-//       background: yellow 
-//       color blue
-//       padding 3px 15px
-//     &:first-child
-//       +before('')
-//         sprite($sprite-home)
-//         display: inline-block
-//         margin-right 6px
-//   &__separator 
-//     sprite($sprite-bread)
-//     display: inline-block
-//     margin 0 10px
+  &__item
+    font-size 15px
+    display: inline-block
+    a 
+      color dark
+      font-size 15px
+    &:last-child
+      color grey2
+  &__separator 
+    display: inline-block
+    margin 0 5px
+    color grey2
     
 
 // Custom scrollbar
@@ -830,10 +876,11 @@ th
 
 
 // Bx slider background slide selector    
-.responsiveSlide
-  background: url(../images/slider/1.jpg) center 
-  width 100%
-  height 738px
+// .responsiveSlide
+//   background: url(../images/slider/1.jpg) center 
+//   width 100%
+//   height 738px
+
 
 // Ticker
 .ticker
@@ -842,13 +889,24 @@ th
 .example-enough-space.has-enough-space 
   text-align: center;
   
+
 // FAQ container
-.section__content__main
-  > p > a 
+.section__content
+  p 
+    font-size 15px 
+    span 
+      color red
+      font-size 12px 
+      position relative
+      top -5px
+  p  a 
+    color gold
+    font-size 15px
+  p  a 
     margin-right 3px
   ol li
     position: relative;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 25px;
     padding-left: 18px !important;
     > ul
@@ -864,7 +922,7 @@ th
     list-style-type: disc;
     li 
       line-height: 25px;
-      font-size: 14px;
+      font-size: 15px;
       padding-left: 18px !important;
       ul
         padding-left 17px
@@ -901,7 +959,7 @@ th
     font-weight 400
     color dark
     margin 0 0 16px 0
-    padding 0px !important
+    padding 0px
   .t-title 
     font-size: 24px;
     font-weight: 200;

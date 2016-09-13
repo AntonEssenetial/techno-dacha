@@ -104,7 +104,7 @@ gulp.task('stylus', function(cb){
     .pipe(stylus({
       use: nib()
       }))
-    .pipe(gcmq({beautify: false}))
+    .pipe(gcmq({beautify: true}))
     .pipe(csscomb())
     .pipe(gulp.dest('dist/css'))
     .pipe(csso())
@@ -210,12 +210,6 @@ gulp.task('watch',function(){
   });
 
 
-  // Modules retinaSprite
-  watch('assets/images/retinaSprite/*.*', function() {
-    return runSequence('retinaSprite', browserSync.reload);
-  });
-
-
   // Modules sprite
   watch('assets/images/sprite/*.*', function() {
     return runSequence('sprite', browserSync.reload);
@@ -229,4 +223,4 @@ gulp.task('watch',function(){
 });
 
 
-gulp.task('default',['watch','browser-sync','pug', 'sprite', 'retinaSprite', 'stylus', 'build-js']); 
+gulp.task('default',['watch','browser-sync','pug', 'sprite',  'stylus', 'build-js']); 

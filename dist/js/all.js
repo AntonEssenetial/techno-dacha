@@ -1,79 +1,72 @@
 $(document).ready(function() {
-  // Active tabs
-  $(".jsTab").click(function() {
-    $(".jsTab").removeClass("active").eq($(this).index()).addClass("active");
-    $(".jsCont").hide().eq($(this).index()).fadeIn()
-  }).eq(0)
 
-  // popup
-  var popup = $('.popup-wrapper')
-  $('.js__popup').click(function(event) {
-    popup.addClass('jsVisible');
-  });
-  $('.close').click(function(event) {
-    popup.removeClass('jsVisible');
-    $(this).closest('.jsVisible').removeClass('jsVisible');
-  });
+
+  // Rating stars 
+  $('.c-rating').rating();
+
+  // Active tabs
+  function swtch(tab, tabActive, tabContent){
+    var tab = $(tab),
+        tabActive = tabActive,
+        tabContent = $(tabContent);
+    tab.click(function() {
+      tab.removeClass(tabActive).eq($(this).index()).addClass(tabActive);
+      tabContent.removeClass(tabActive).eq($(this).index()).addClass(tabActive);
+    }).eq(0)
+  };
+  swtch('.jsTab', 'active', '.jsCont');
+
+  // // popup
+  // var popup = $('.popup')
+  // var close = $('.popup__close')
+  // $('.js__popup').click(function(event) {
+  //   popup.addClass('jsVisible');
+  // });
+  // close.click(function(event) {
+  //   popup.removeClass('jsVisible');
+  //   $(this).closest('.jsVisible').removeClass('jsVisible');
+  // });
+
 
   // Navgoco acordion
-  var acordion = $()
-  acordion.navgoco({accordion: true});
+  // var acordion = $()
+  // acordion.navgoco({accordion: true});
 
-  // Bx slider
-  $().bxSlider({
-    pager: false,
-    controls: false,
-    auto: true,
-    speed: 1000,
-    pause: 7000,
-    mode: 'fade'
-  });
-  $().bxSlider({
-    pager: true,
-    controls: false,
-    auto: true,
-    speed: 1000,
-    pause: 5000,
-    pagerCustom: '.bx__pager',
-    responsive: true,
-    // nextSelector: '.s-next',
-    // prevSelector: '.s-prev',
-    // nextText: '↽',
-    // prevText: '↽'
-  });
-
+  
   // Slick slider
-  $().slick({
-  infinite: true,
-  dots: false,
-  arrows: false,
-  autoplay: false,
-  slidesToShow: 15,
-  slidesToScroll: 9,
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
-  ]
+  $('.slick-slider-1').slick({
+    infinite: true,
+    dots: true,
+    arrows: true,
+    autoplay: true,
+    slidesToShow: 1
+  });
+  $('.slick-silder-2').slick({
+    infinite: true,
+    dots: false,
+    arrows: true,
+    autoplay: true,
+    slidesToShow: 7,
+    slidesToScroll: 4,
+    focusOnSelect: true,
+    variableWidth: true,
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 6,
+          slidesToScroll: 3
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 2
+        }
+      }]
   });
 
-  // Custom scroll function
-  (function($){
-    $(window).load(function(){
-      // $().mCustomScrollbar({
-      //   scrollInertia:100,
-      //   contentTouchScroll: false,
-      //   autoExpandScrollbar: true
-      // });
-      $().mCustomScrollbar({
-        scrollInertia:100,
-        axis:"x",
-        setWidth: false,
-        setHeight: false,
-        contentTouchScroll: false,
-        autoExpandScrollbar: true
-      });
-    });
-  })(jQuery);
 
   // Scroll to top
   $().click(function () {
@@ -82,6 +75,7 @@ $(document).ready(function() {
     }, 1000);
     return false;
   });
+
 
   // Height detect funciton
   function heightDetect(){
@@ -92,6 +86,85 @@ $(document).ready(function() {
   heightDetect();
   $(window).resize(function(){
     heightDetect();
+  });
+
+
+  // Width detect funciton
+  // function widthDetect(){
+  //   $('.main-menu__sub-menu').css( 
+  //     'width', $(window).width()
+  //   );
+  // };
+  // widthDetect();
+  // $(window).resize(function(){
+  //   widthDetect();
+  // });
+  // $(window).load(function(){
+  //   widthDetect();
+  // });
+
+
+  // Toggle menu
+  var menu = $()
+  $('.jsTag').click(function(event) {
+    $(this).toggleClass('active')
+    menu.toggleClass('active animated fadeInUp');
+    // $('.menu').toggleClass('active animated fadeInUp');
+  });
+
+
+  // Custom scroll
+  // var scrolVar = $()
+  // (function($){
+  //   $(window).load(function(){
+  //     scrollVar.mCustomScrollbar({
+  //       scrollInertia:100,
+  //       contentTouchScroll: true,
+  //       autoExpandScrollbar: true
+  //     });
+  //   });
+  // })(jQuery);
+
+
+  // Auto height column function
+  equalheight = function(container){
+
+  var currentTallest = 0,
+       currentRowStart = 0,
+       rowDivs = new Array(),
+       $el,
+       topPosition = 0;
+   $(container).each(function() {
+  
+     $el = $(this);
+     $($el).height('auto')
+     topPostion = $el.position().top;
+  
+     if (currentRowStart != topPostion) {
+       for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+         rowDivs[currentDiv].height(currentTallest);
+       }
+       rowDivs.length = 0; // empty the array
+       currentRowStart = topPostion;
+       currentTallest = $el.height();
+       rowDivs.push($el);
+     } else {
+       rowDivs.push($el);
+       currentTallest = (currentTallest < $el.height()) ? ($el.height()) : (currentTallest);
+    }
+     for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+       rowDivs[currentDiv].height(currentTallest);
+     }
+   });
+  }
+  
+  $(window).load(function() {
+    equalheight();
+  });
+  
+  
+  $(window).resize(function(){
+    equalheight();
   });
 
 });

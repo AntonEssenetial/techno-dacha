@@ -1,13 +1,805 @@
+mixin header()  
+  header.header
+    .header__top
+      .container-wrapper
+        .row.end.center 
+          .col__right.row.center
+            .header__top__col.header__top__city
+              span Ваш город: 
+              select()
+                option(value="Москва1") Москва1
+                option(value="Москва3") Москва3
+                option(value="Москва2") Москва2
+            .header__top__col.header__top__opend
+              span Ежедневно с 
+              strong 9 
+              | до 
+              strong 21
+            .header__top__col.header__top__phone
+              span.header__top__icon 8 495 243 41 00
+            .header__top__col.header__top__phone 
+              span.header__top__circle 8 800 505 59 76
+    .header__middle 
+      .container-wrapper
+        .row.between
+          .col__left 
+            a(href="index.html").header__middle__logo
+          .col__right.row.center
+            .header__middle__col.header__middle__search
+              input(type="text", placeholder='Поиск').header__middle__search-input
+            .header__middle__col.header__middle__favorite
+              a(href="").button.button_grey.button_favorite Избранное
+            .header__middle__col.header__middle__compare
+              a(href="").button.button_grey.button_compare Сравнение
+                span.header__middle__counter 3
+            .header__middle__col.header__middle__cart 
+              a(href="").button.button_yellow.button_cart Корзина
+                span.header__middle__counter 3
+    .header__bottom
+      .menu-wrapper
+        +main-menu([
+          {
+            "title": "Интсрумент",
+            "url": "index.html",
+           "submenu": [
+              {
+                "title": "Аэраторы, скарификаторы, подрезчики",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/1.png'
+              },
+              {
+                "title": "Воздуходувки, садовые пылесосы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/2.png'
+              },
+              {
+                "title": "Газонокосилки",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/3.png'
+              },
+              {
+                "title": "Дровоколы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/4.png'
+              },
+              {
+                "title": "Садовые измельчители",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/5.png'
+              },
+              {
+                "title": "Культиваторы, мотоблоки",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/6.png'
+              },
+              {
+                "title": "Кусторезы, ножницы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/7.png'
+              },
+              {
+                "title": "Ножницы для газона",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/9.png'
+              },
+              {
+                "title": "Опрыскиватели, распылители",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/10.png'
+              },
+              {
+                "title": "Цепные пилы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/11.png'
+              },
+              {
+                "title": "Сучкорезы, высоторезы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/12.png'
+              },
+              {
+                "title": "Тримеры, мотокосы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/13.png'
+              },
+              {
+                "title": "Тракторы, райдеры",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/14.png'
+              }
+            ]
+          },
+          {
+            "title": "Все для сада",
+            "url": "about.html",
+            "submenu": [
+              {
+                "title": "Аэраторы, скарификаторы, подрезчики",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/1.png'
+              },
+              {
+                "title": "Воздуходувки, садовые пылесосы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/2.png'
+              },
+              {
+                "title": "Газонокосилки",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/3.png'
+              },
+              {
+                "title": "Дровоколы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/4.png'
+              },
+              {
+                "title": "Садовые измельчители",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/5.png'
+              },
+              {
+                "title": "Культиваторы, мотоблоки",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/6.png'
+              },
+              {
+                "title": "Кусторезы, ножницы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/7.png'
+              },
+              {
+                "title": "Ножницы для газона",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/9.png'
+              },
+              {
+                "title": "Опрыскиватели, распылители",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/10.png'
+              },
+              {
+                "title": "Цепные пилы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/11.png'
+              },
+              {
+                "title": "Сучкорезы, высоторезы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/12.png'
+              },
+              {
+                "title": "Тримеры, мотокосы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/13.png'
+              },
+              {
+                "title": "Тракторы, райдеры",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/14.png'
+              }
+            ]
+          },
+          {
+            "title": "Ручной инструмент",
+            "url": "servers.html",
+           "submenu": [
+              {
+                "title": "Аэраторы, скарификаторы, подрезчики",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/1.png'
+              },
+              {
+                "title": "Воздуходувки, садовые пылесосы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/2.png'
+              },
+              {
+                "title": "Газонокосилки",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/3.png'
+              },
+              {
+                "title": "Дровоколы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/4.png'
+              },
+              {
+                "title": "Садовые измельчители",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/5.png'
+              },
+              {
+                "title": "Культиваторы, мотоблоки",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/6.png'
+              },
+              {
+                "title": "Кусторезы, ножницы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/7.png'
+              },
+              {
+                "title": "Ножницы для газона",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/9.png'
+              },
+              {
+                "title": "Опрыскиватели, распылители",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/10.png'
+              },
+              {
+                "title": "Цепные пилы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/11.png'
+              },
+              {
+                "title": "Сучкорезы, высоторезы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/12.png'
+              },
+              {
+                "title": "Тримеры, мотокосы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/13.png'
+              },
+              {
+                "title": "Тракторы, райдеры",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/14.png'
+              }
+            ]
+          },
+          {
+            "title": "Силовая техника",
+            "url": "servers.html",
+           "submenu": [
+              {
+                "title": "Аэраторы, скарификаторы, подрезчики",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/1.png'
+              },
+              {
+                "title": "Воздуходувки, садовые пылесосы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/2.png'
+              },
+              {
+                "title": "Газонокосилки",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/3.png'
+              },
+              {
+                "title": "Дровоколы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/4.png'
+              },
+              {
+                "title": "Садовые измельчители",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/5.png'
+              },
+              {
+                "title": "Культиваторы, мотоблоки",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/6.png'
+              },
+              {
+                "title": "Кусторезы, ножницы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/7.png'
+              },
+              {
+                "title": "Ножницы для газона",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/9.png'
+              },
+              {
+                "title": "Опрыскиватели, распылители",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/10.png'
+              },
+              {
+                "title": "Цепные пилы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/11.png'
+              },
+              {
+                "title": "Сучкорезы, высоторезы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/12.png'
+              },
+              {
+                "title": "Тримеры, мотокосы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/13.png'
+              },
+              {
+                "title": "Тракторы, райдеры",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/14.png'
+              }
+            ]
+          }
+          ,
+          {
+            "title": "Климатическое оборудование",
+            "url": "servers.html",
+           "submenu": [
+              {
+                "title": "Аэраторы, скарификаторы, подрезчики",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/1.png'
+              },
+              {
+                "title": "Воздуходувки, садовые пылесосы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/2.png'
+              },
+              {
+                "title": "Газонокосилки",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/3.png'
+              },
+              {
+                "title": "Дровоколы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/4.png'
+              },
+              {
+                "title": "Садовые измельчители",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/5.png'
+              },
+              {
+                "title": "Культиваторы, мотоблоки",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/6.png'
+              },
+              {
+                "title": "Кусторезы, ножницы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/7.png'
+              },
+              {
+                "title": "Ножницы для газона",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/9.png'
+              },
+              {
+                "title": "Опрыскиватели, распылители",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/10.png'
+              },
+              {
+                "title": "Цепные пилы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/11.png'
+              },
+              {
+                "title": "Сучкорезы, высоторезы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/12.png'
+              },
+              {
+                "title": "Тримеры, мотокосы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/13.png'
+              },
+              {
+                "title": "Тракторы, райдеры",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/14.png'
+              }
+            ]
+          }
+          ,
+          {
+            "title": "Автосервисное оборудование",
+            "url": "servers.html",
+           "submenu": [
+              {
+                "title": "Аэраторы, скарификаторы, подрезчики",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/1.png'
+              },
+              {
+                "title": "Воздуходувки, садовые пылесосы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/2.png'
+              },
+              {
+                "title": "Газонокосилки",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/3.png'
+              },
+              {
+                "title": "Дровоколы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/4.png'
+              },
+              {
+                "title": "Садовые измельчители",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/5.png'
+              },
+              {
+                "title": "Культиваторы, мотоблоки",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/6.png'
+              },
+              {
+                "title": "Кусторезы, ножницы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/7.png'
+              },
+              {
+                "title": "Ножницы для газона",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/9.png'
+              },
+              {
+                "title": "Опрыскиватели, распылители",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/10.png'
+              },
+              {
+                "title": "Цепные пилы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/11.png'
+              },
+              {
+                "title": "Сучкорезы, высоторезы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/12.png'
+              },
+              {
+                "title": "Тримеры, мотокосы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/13.png'
+              },
+              {
+                "title": "Тракторы, райдеры",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/14.png'
+              }
+            ]
+          }
+          ,
+          {
+            "title": "Электрика и свет",
+            "url": "servers.html",
+           "submenu": [
+              {
+                "title": "Аэраторы, скарификаторы, подрезчики",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/1.png'
+              },
+              {
+                "title": "Воздуходувки, садовые пылесосы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/2.png'
+              },
+              {
+                "title": "Газонокосилки",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/3.png'
+              },
+              {
+                "title": "Дровоколы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/4.png'
+              },
+              {
+                "title": "Садовые измельчители",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/5.png'
+              },
+              {
+                "title": "Культиваторы, мотоблоки",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/6.png'
+              },
+              {
+                "title": "Кусторезы, ножницы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/7.png'
+              },
+              {
+                "title": "Ножницы для газона",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/9.png'
+              },
+              {
+                "title": "Опрыскиватели, распылители",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/10.png'
+              },
+              {
+                "title": "Цепные пилы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/11.png'
+              },
+              {
+                "title": "Сучкорезы, высоторезы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/12.png'
+              },
+              {
+                "title": "Тримеры, мотокосы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/13.png'
+              },
+              {
+                "title": "Тракторы, райдеры",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/14.png'
+              }
+            ]
+          }
+          ,
+          {
+            "title": "Расходные материалы",
+            "url": "servers.html",
+           "submenu": [
+              {
+                "title": "Аэраторы, скарификаторы, подрезчики",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/1.png'
+              },
+              {
+                "title": "Воздуходувки, садовые пылесосы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/2.png'
+              },
+              {
+                "title": "Газонокосилки",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/3.png'
+              },
+              {
+                "title": "Дровоколы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/4.png'
+              },
+              {
+                "title": "Садовые измельчители",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/5.png'
+              },
+              {
+                "title": "Культиваторы, мотоблоки",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/6.png'
+              },
+              {
+                "title": "Кусторезы, ножницы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/7.png'
+              },
+              {
+                "title": "Ножницы для газона",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/9.png'
+              },
+              {
+                "title": "Опрыскиватели, распылители",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/10.png'
+              },
+              {
+                "title": "Цепные пилы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/11.png'
+              },
+              {
+                "title": "Сучкорезы, высоторезы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/12.png'
+              },
+              {
+                "title": "Тримеры, мотокосы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/13.png'
+              },
+              {
+                "title": "Тракторы, райдеры",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/14.png'
+              }
+            ]
+          }
+          ,
+          {
+            "title": "Товары для отдыха",
+            "url": "servers.html",
+           "submenu": [
+              {
+                "title": "Аэраторы, скарификаторы, подрезчики",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/1.png'
+              },
+              {
+                "title": "Воздуходувки, садовые пылесосы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/2.png'
+              },
+              {
+                "title": "Газонокосилки",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/3.png'
+              },
+              {
+                "title": "Дровоколы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/4.png'
+              },
+              {
+                "title": "Садовые измельчители",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/5.png'
+              },
+              {
+                "title": "Культиваторы, мотоблоки",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/6.png'
+              },
+              {
+                "title": "Кусторезы, ножницы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/7.png'
+              },
+              {
+                "title": "Ножницы для газона",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/9.png'
+              },
+              {
+                "title": "Опрыскиватели, распылители",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/10.png'
+              },
+              {
+                "title": "Цепные пилы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/11.png'
+              },
+              {
+                "title": "Сучкорезы, высоторезы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/12.png'
+              },
+              {
+                "title": "Тримеры, мотокосы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/13.png'
+              },
+              {
+                "title": "Тракторы, райдеры",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/14.png'
+              }
+            ]
+          },
+          {
+            "title": "Еще много всего",
+            "url": "servers.html",
+           "submenu": [
+              {
+                "title": "Аэраторы, скарификаторы, подрезчики",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/1.png'
+              },
+              {
+                "title": "Воздуходувки, садовые пылесосы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/2.png'
+              },
+              {
+                "title": "Газонокосилки",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/3.png'
+              },
+              {
+                "title": "Дровоколы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/4.png'
+              },
+              {
+                "title": "Садовые измельчители",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/5.png'
+              },
+              {
+                "title": "Культиваторы, мотоблоки",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/6.png'
+              },
+              {
+                "title": "Кусторезы, ножницы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/7.png'
+              },
+              {
+                "title": "Ножницы для газона",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/9.png'
+              },
+              {
+                "title": "Опрыскиватели, распылители",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/10.png'
+              },
+              {
+                "title": "Цепные пилы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/11.png'
+              },
+              {
+                "title": "Сучкорезы, высоторезы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/12.png'
+              },
+              {
+                "title": "Тримеры, мотокосы",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/13.png'
+              },
+              {
+                "title": "Тракторы, райдеры",
+                "url": "catalog.html",
+                "src": 'images/catalog/icons/14.png'
+              }
+            ]
+          }
+        ])
+
+
+//- Navigation multi-level
+mixin main-menu(data)
+  nav.main-menu&attributes(attributes)
+    ul.row.between.center
+      each item, i in data
+        if i === pageId
+          li.main-menu__item.main-menu__item_active
+            a(href=item.url).main-menu__link= item.title
+            if (item.submenu !== false)
+              +main-menu-submenu(item.submenu)
+        else
+          li.main-menu__item
+            a(href=item.url).main-menu__link= item.title
+            if (item.submenu !== false)
+              +main-menu-submenu(item.submenu)
+mixin main-menu-submenu(data)
+  ul.main-menu__sub-menu.animated.fadeIn&attributes(attributes)
+    .main-menu__sub-menu-wrapper
+      each item, i in data
+        if i === subId
+          li.main-menu__sub-menu__item.main-menu__sub-menu__item_active
+            a(href=item.url).main-menu__sub-menu__link
+              span.main-menu__sub-menu__img-wrapper
+                img(src=item.src , alt="")
+              = item.title
+        else  
+          li.main-menu__sub-menu__item
+            a(href=item.url).main-menu__sub-menu__link
+              span.main-menu__sub-menu__img-wrapper
+                img(src=item.src , alt="")
+              = item.title
+
+
 //- Navigation menu
 mixin nav(items)
-  ul.menu
-    each item, i in items
-      if i === pageId
-        li.menu__item.menu__item_active
-          a.menu__link(href=item.href)= item.name
-      else
-        li.menu__item
-          a.menu__link(href=item.href)= item.name
+  nav.main-menu
+    ul.menu
+      each item, i in items
+        if i === pageId
+          li.menu__item.menu__item_active
+            a.menu__link(href=item.href)= item.name
+        else
+          li.menu__item
+            a.menu__link(href=item.href)= item.name
 
 
 //- Sandwitch
@@ -81,3 +873,62 @@ mixin pagination
         a(href="") Назад
       li.next_page 
         a(href="") Далее
+
+
+//- policy
+mixin policy()
+  span.t-title 1. Регистрация Пользователя. Учетная запись Пользователя
+  ol
+    li 
+      p ООО «ЯНДЕКС» (далее — «Яндекс») предлагает пользователю сети Интернет (далее – Пользователь) - использовать свои сервисы на условиях, изложенных в настоящем Пользовательском соглашении (далее — «Соглашение», «ПС»). Соглашение вступает в силу с момента выражения Пользователем согласия с его условиями в порядке, предусмотренном п. 1.4 Соглашения.
+    li 
+      p Яндекс предлагает Пользователям доступ к широкому спектру сервисов, включая средства навигации, коммуникации, поиска, размещения и хранения разного рода информации и материалов (контента), персонализации контента, совершения покупок и т. д. Все существующие на данный момент сервисы, а также любое развитие их и/или добавление новых является предметом настоящего Соглашения.
+    li 
+      p Использование сервисов Яндекса регулируется настоящим Соглашением, Лицензией на использование поисковой системы Яндекса (<a href='#'>https://yandex.ru/legal/termsofuse/</a>), Политикой конфиденциальности (<a href='#'>https://yandex.ru/legal/confidential/</a>), а также условиями использования отдельных сервисов. Соглашение может быть изменено Яндексом без какого-либо специального уведомления, новая редакция Соглашения вступает в силу с момента ее размещения в сети Интернет по указанному в настоящем абзаце адресу, если иное не предусмотрено новой редакцией Соглашения. Действующая редакция ПС всегда находится на странице по адресу <a href='#'>https://yandex.ru/legal/rules/ </a>. 
+    li 
+      p Начиная использовать какой-либо сервис/его отдельные функции, либо пройдя процедуру регистрации, Пользователь считается принявшим условия Соглашения в полном объеме, без всяких оговорок и исключений. В случае несогласия Пользователя с какими-либо из положений Соглашения, Пользователь не вправе использовать сервисы Яндекса. В случае если Яндексом были внесены какие-либо изменения в Соглашение в порядке, предусмотренном пунктом 1.3 Соглашения, с которыми Пользователь не согласен, он обязан прекратить использование сервисов Яндекса.
+      ul
+        li Начиная использовать какой-либо сервис/его отдельные функции
+        li Пользователь считается принявшим условия
+        li Соглашения в полном объеме, без всяких оговорок и исключений.
+        li В случае несогласия Пользователя с какими-либо из положений Соглашения
+        li Пользователь не вправе использовать сервисы Яндекса.
+      ul.num__items_roman
+        li Начиная использовать какой-либо сервис/его отдельные функции
+        li Пользователь считается принявшим условия
+        li Соглашения в полном объеме, без всяких оговорок и исключений.
+        li В случае несогласия Пользователя с какими-либо из положений Соглашения
+        li Пользователь не вправе использовать сервисы Яндекса.
+  span.t-title 2. Стилизация текста
+  h1 h1. Text heading
+  h2 h2. Text heading
+  h3 h3. Text heading
+  h4 h4. Text heading
+  h5 h5. Text heading
+  h6 h6. Text heading
+  p Начиная использовать какой-либо сервис его отдельные функции, либо пройдя процедуру регистрации, Пользователь считается принявшим условия <strong>Соглашения</strong> в полном объеме <span>1</span>, без всяких оговорок и исключений. В случае несогласия Пользователя с какими-либо из положений Соглашения, Пользователь не вправе использовать сервисы Яндекса. 
+  p <span>1</span> В случае если 
+    a(href="") Яндексом 
+    | были внесены какие-либо изменения в Соглашение в порядке, <u>предусмотренном пунктом 1.3</u> Соглашения, с которыми Пользователь не согласен, он <s>обязан</s> прекратить <i>использование сервисов Яндекса</i>.
+  ul
+    li Lorem ipsum dolor sit amet
+    li Consectetur adipiscing elit
+    li Integer molestie lorem at massa
+    li Facilisis in pretium nisl aliquet
+    li Nulla volutpat aliquam velit
+      ul
+        li Phasellus iaculis neque
+        li Purus sodales ultricies
+        li Vestibulum laoreet porttitor sem
+        li Ac tristique libero volutpat at
+    li Faucibus porta lacus fringilla vel
+    li Aenean sit amet erat nunc
+  ol
+    li Lorem ipsum dolor sit amet
+    li Consectetur adipiscing elit
+    li Integer molestie lorem at massa
+    li Facilisis in pretium nisl aliquet
+    li Nulla volutpat aliquam velit
+    li Faucibus porta lacus fringilla vel
+    li Aenean sit amet erat nunc
+    li Eget porttitor lorem

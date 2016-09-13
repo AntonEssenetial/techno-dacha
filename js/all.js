@@ -1,19 +1,20 @@
 $(document).ready(function() {
-  
+
+
+  // Rating stars 
+  $('.c-rating').rating();
+
   // Active tabs
-  function swithchTabs (tabName, contentTabName, current) {
-    var tab = tabName
-    var contentTab = contentTabName
-    var active = current
-    tab.click(function(){
-      tabName.removeClass(active).eq($(this).index()).addClass(active);
-      contentTab.removeClass(active).eq($(this).index()).addClass(active);
-    });
-  }
-  switchTabs('jsTab', 'jsCont', 'active');
-  switchTabs('jsTab', 'jsContFlex', 'jsFlex');
-  switchTabs('jsTabDash', 'jsContDash', 'active');
-  
+  function swtch(tab, tabActive, tabContent){
+    var tab = $(tab),
+        tabActive = tabActive,
+        tabContent = $(tabContent);
+    tab.click(function() {
+      tab.removeClass(tabActive).eq($(this).index()).addClass(tabActive);
+      tabContent.removeClass(tabActive).eq($(this).index()).addClass(tabActive);
+    }).eq(0)
+  };
+  swtch('.jsTab', 'active', '.jsCont');
 
   // // popup
   // var popup = $('.popup')
@@ -26,77 +27,44 @@ $(document).ready(function() {
   //   $(this).closest('.jsVisible').removeClass('jsVisible');
   // });
 
-  function popup (popup, closePopup, popupVisible) {
-    var popup = popup;
-    var close = closePopup;
-    var popupActive = popupVisible;
-    close.click(function(){
-      popup.removeClass(popupVisible);
-      $(this).closest(popupVisible).removeClass(popupVisible)
-    });
-  }
-  popup('popup','popup__close','jsVisible');
-
 
   // Navgoco acordion
-  var acordion = $('.jsNavgoco')
-  acordion.navgoco({accordion: true});
+  // var acordion = $()
+  // acordion.navgoco({accordion: true});
 
-
-  // Lightgallery
-  // $().lightGallery(); 
-
-
-  // Bx slider
-  var slider = $().bxSlider({
-    pager: false,
-    controls: false,
-    auto: true,
-    speed: 1000,
-    pause: 7000,
-    mode: 'fade'
-  });
-
-
-  var slider2 = $().bxSlider({
-    pager: true,
-    controls: false,
-    auto: true,
-    speed: 1000,
-    pause: 5000,
-    pagerCustom: '.bx__pager',
-    responsive: true,
-    // nextSelector: '.s-next',
-    // prevSelector: '.s-prev',
-    // nextText: '↽',
-    // prevText: '↽'
-  });
-
-
-  // Bx custom controls 
-  // $('#next').click(function(){
-  //   slider1.goToNextSlide();
-  //   slider2.goToPrevSlide();
-  //   return false
-  // });
-  // $('#prev').click(function(){
-  //   slider1.goToPrevSlide();
-  //   slider2.goToNextSlide();
-  //   return false
-  // });
-
-
+  
   // Slick slider
-  $().slick({
-  infinite: true,
-  dots: false,
-  arrows: false,
-  autoplay: false,
-  slidesToShow: 15,
-  slidesToScroll: 9,
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
+  $('.slick-slider-1').slick({
+    infinite: true,
+    dots: true,
+    arrows: true,
+    autoplay: true,
+    slidesToShow: 1
+  });
+  $('.slick-silder-2').slick({
+    infinite: true,
+    dots: false,
+    arrows: true,
+    autoplay: true,
+    slidesToShow: 7,
+    slidesToScroll: 4,
+    focusOnSelect: true,
+    variableWidth: true,
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 6,
+          slidesToScroll: 3
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 2
+        }
+      }]
   });
 
 
@@ -122,15 +90,18 @@ $(document).ready(function() {
 
 
   // Width detect funciton
-  function widthDetect(){
-    $().css( 
-      'width', $(window).width()
-    );
-  };
-  widthDetect();
-  $(window).resize(function(){
-    widthDetect();
-  });
+  // function widthDetect(){
+  //   $('.main-menu__sub-menu').css( 
+  //     'width', $(window).width()
+  //   );
+  // };
+  // widthDetect();
+  // $(window).resize(function(){
+  //   widthDetect();
+  // });
+  // $(window).load(function(){
+  //   widthDetect();
+  // });
 
 
   // Toggle menu
@@ -143,16 +114,16 @@ $(document).ready(function() {
 
 
   // Custom scroll
-  var scrolVar = $()
-  (function($){
-    $(window).load(function(){
-      scrollVar.mCustomScrollbar({
-        scrollInertia:100,
-        contentTouchScroll: true,
-        autoExpandScrollbar: true
-      });
-    });
-  })(jQuery);
+  // var scrolVar = $()
+  // (function($){
+  //   $(window).load(function(){
+  //     scrollVar.mCustomScrollbar({
+  //       scrollInertia:100,
+  //       contentTouchScroll: true,
+  //       autoExpandScrollbar: true
+  //     });
+  //   });
+  // })(jQuery);
 
 
   // Auto height column function

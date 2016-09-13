@@ -1,0 +1,90 @@
+// Header icons
+.header
+  &__top__icon
+    +before('')
+      sprite($sprite-phone)
+      vam(, 0px 15px 0 0)
+      vertical-align: bottom
+  &__middle__logo
+    sprite($sprite-logo)
+  &__middle__search 
+    position: relative
+    +before('')
+      sprite($sprite-search)
+      vam()
+      left 6px
+      position absolute
+      z-index 1
+      top 8px
+
+.button_compare 
+  border-color yellow
+  +before('')
+    sprite($sprite-compare)
+    vam(-2px, 0px 5px 0 0 )
+.button_cart 
+  +before('')
+    sprite($sprite-cart)
+    vam(-2px, 0px 5px 0 0 )
+.button_favorite 
+  +before('')
+    sprite($sprite-like)
+    vam(0px, 0px 5px 0 0 )
+.button_buy 
+  +before('')
+    sprite($sprite-buy)
+    vam(, 0px 7px 0 0)
+  color white
+.button_buy-small
+  sprite($sprite-buy2)
+.button_compare-item
+  background: grey
+  padding 4px 10px
+  border-radius (4px)
+  font-size 16px
+  +before('')
+    sprite($sprite-compare2)
+    vam(-1px, 0px 7px 0 0)
+.like-button 
+  border 1px solid dash-border
+  border-radius (4px)
+  padding 5px 5px
+  background: grey
+  +before('')
+    sprite($sprite-like2)
+    vam()
+.by-button 
+  background: yellow 
+  border-radius (4px)
+  padding 3px 8px
+  +before('')
+    sprite($sprite-buy3)
+    vam()
+
+// Section item icon
+.section__service__icon-1
+  sprite($sprite-icon-1)
+  margin 0 auto
+.section__service__icon-2
+  sprite($sprite-icon-2)
+  margin 0 auto
+.section__service__icon-3
+  sprite($sprite-icon-3)
+  margin 0 auto
+  
+
+// Footer
+.footer__logo
+  sprite($sprite-footer-logo)
+.footer__pay 
+  sprite($sprite-pay)
+.vk 
+  sprite($sprite-vk)
+.fb 
+  sprite($sprite-fb)
+.g 
+  sprite($sprite-g)
+.ok 
+  sprite($sprite-od)
+.tw 
+  sprite($sprite-tw)
