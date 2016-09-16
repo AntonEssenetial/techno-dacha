@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
   </head>
   <body>
@@ -48,15 +48,19 @@
                   <input class="header__middle__search-input" type="text" placeholder="Поиск" />
                 </div>
                 <div class="header__middle__col header__middle__favorite">
-                  <a class="button button_grey button_favorite" href="">Избранное</a>
+                  <a class="button button_grey button_favorite" href="">
+                    <span class="resp">Избранное</span>
+                  </a>
                 </div>
                 <div class="header__middle__col header__middle__compare">
-                  <a class="button button_grey button_compare" href="">Сравнение
+                  <a class="button button_grey button_compare" href="">
+                    <span class="resp">Сравнение</span>
                     <span class="header__middle__counter">3</span>
                   </a>
                 </div>
                 <div class="header__middle__col header__middle__cart">
-                  <a class="button button_yellow button_cart" href="">Корзина
+                  <a class="button button_yellow button_cart" href="">
+                    <span class="resp cart-white">Корзина</span>
                     <span class="header__middle__counter">3</span>
                   </a>
                 </div>
@@ -924,7 +928,7 @@
         </div>
       </header>
       <section class="section__slider">
-        <div class="container-wrapper">
+        <div class="container-wrapper container-wrapper_responsive-slider">
           <div class="slider-wrapper">
             <div class="slick-slider-1">
               <div class="slide">
@@ -943,7 +947,7 @@
       <section class="section__items">
         <div class="container-wrapper">
           <div class="f-container">
-            <div class="f__row">
+            <div class="f__row section__items_responsive">
               <div class="f__col col__50">
                 <div class="section__items__col section__items__big-item">
                   <div class="section__items__top">
@@ -960,7 +964,7 @@
                   </div>
                 </div>
               </div>
-              <div class="f__col col__25 row">
+              <div class="f__col col__25 col__25_1000 row">
                 <div class="section__items__col section__items__mid-item">
                   <span class="section__items__cat">Бензопилы и электропилы</span>
                   <h2>
@@ -973,7 +977,7 @@
                   </div>
                 </div>
               </div>
-              <div class="f__col col__25">
+              <div class="f__col col__25 col__25_responive responsive__slider-5">
                 <div class="section__items__col section__items__small">
                   <span class="section__items__cat">Рубанки электрические</span>
                   <h2>
@@ -1005,15 +1009,15 @@
           </div>
         </div>
       </section>
-      <section class="section__discounts">
+      <section class="section__discounts section__responsive">
         <div class="container-wrapper">
           <div class="row center between">
             <h2>Акции скидки</h2>
             <a class="view-all" href="">Смотреть все</a>
           </div>
-          <div class="row section__discounts__row">
+          <div class="section__discounts__row">
             <div class="f-container">
-              <div class="f__row">
+              <div class="f__row responsive__slider-3">
                 <div class="f__col col__25">
                   <div class="section__item section__item_present">
                     <div class="section__item__rate">
@@ -1144,9 +1148,9 @@
           </div>
         </div>
       </section>
-      <section class="section__service">
+      <section class="section__service section__responsive">
         <div class="container-wrapper">
-          <div class="row between">
+          <div class="row between responsive__slider-2">
             <div class="col__28 section__service__item">
               <div class="section__service__icon-1"></div>
               <span class="section__service__heading">Сервис 24/7</span>
@@ -1165,7 +1169,7 @@
           </div>
         </div>
       </section>
-      <section class="section__brands">
+      <section class="section__brands section__responsive">
         <div class="container-wrapper">
           <div class="row center between">
             <h2>Брэнды</h2>
@@ -1203,7 +1207,7 @@
         </div>
       </section>
       <section class="section__about">
-        <div class="container-wrapper">
+        <div class="container-wrapper section__responsive">
           <div class="row">
             <div class="col__50 col_margin-40 section__about__item">
               <span class="section__about__heading">Коси и забивай!</span>
@@ -1222,14 +1226,14 @@
           </div>
         </div>
       </section>
-      <section class="section__news">
+      <section class="section__news section__responsive">
         <div class="container-wrapper">
           <div class="row center between">
             <h2>Новости</h2>
             <a class="view-all" href="news.html">Смотреть все</a>
           </div>
           <div class="section__news__row">
-            <div class="row between">
+            <div class="row between responsive__slider-4">
               <div class="section__news__item col__20">
                 <div class="section__news__item__img">
                   <a href="news.html">
@@ -1275,14 +1279,106 @@
         </div>
       </section>
       <footer class="footer">
-        <div class="container-wrapper">
-          <div class="row between">
-            <div class="col__20 footer__col__1">
-              <a class="footer__logo" href="index.html"></a>
+        <div class="container-wrapper section__responsive">
+          <div class="row between footer__responsive">
+            <div class="col__21 footer__col__1">
+              <div class="footer__logo-wrapper">
+                <a class="footer__logo" href="index.html"></a>
+              </div>
               <p class="footer__copy">© 2016 Техно Дача </p>
               <div class="footer__dev">
                 <span>© разработчика</span>
               </div>
+            </div>
+            <div class="footer__responsive__menu">
+              <ul class="footer__acordion">
+                <li class="footer__acordion__item">
+                  <a class="footer__acordion__link" href="">Общее</a>
+                  <ul class="footer__acordion__sub-menu">
+                    <li>
+                      <a href="">Бренды</a>
+                    </li>
+                    <li>
+                      <a href="">Клиентам</a>
+                    </li>
+                    <li>
+                      <a href="">Оплата</a>
+                    </li>
+                    <li>
+                      <a href="">Доставка</a>
+                    </li>
+                    <li>
+                      <a href="">Сервис</a>
+                    </li>
+                    <li>
+                      <a href="">Контакты</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="footer__acordion__item">
+                  <a class="footer__acordion__link" href="">О компании</a>
+                  <ul class="footer__acordion__sub-menu">
+                    <li>
+                      <a href="">История</a>
+                    </li>
+                    <li>
+                      <a href="">Достижения</a>
+                    </li>
+                    <li>
+                      <a href="">Преимущества</a>
+                    </li>
+                    <li>
+                      <a href="">Сертификаты</a>
+                    </li>
+                    <li>
+                      <a href="">Вакансии</a>
+                    </li>
+                    <li>
+                      <a href="">Реквизиты</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="footer__acordion__item">
+                  <a class="footer__acordion__link" href="">Физическим лицам</a>
+                  <ul class="footer__acordion__sub-menu">
+                    <li>
+                      <a href="">Как сделать заказ</a>
+                    </li>
+                    <li>
+                      <a href="">Конфиденциальность</a>
+                    </li>
+                    <li>
+                      <a href="">Соглашение</a>
+                    </li>
+                    <li>
+                      <a href="">Правила торговли</a>
+                    </li>
+                    <li>
+                      <a href="">Гарантия на товары</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="footer__acordion__item">
+                  <a class="footer__acordion__link" href="">Юридическим лицам</a>
+                  <ul class="footer__acordion__sub-menu">
+                    <li>
+                      <a href="">Как сделать заказ</a>
+                    </li>
+                    <li>
+                      <a href="">Оптовые условия</a>
+                    </li>
+                    <li>
+                      <a href="">ерсональный менеджер</a>
+                    </li>
+                    <li>
+                      <a href="">Гарантия на товары</a>
+                    </li>
+                    <li>
+                      <a href="">Франшиза</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
             </div>
             <div class="col__60 row between">
               <div class="footer__col">
@@ -1371,7 +1467,7 @@
                 </ul>
               </div>
             </div>
-            <div class="col__20 footer__col__3">
+            <div class="col__19 footer__col__3 center">
               <div class="footer__socials row between">
                 <a class="footer__socials__link vk" href=""></a>
                 <a class="footer__socials__link fb" href=""></a>
@@ -1379,7 +1475,20 @@
                 <a class="footer__socials__link ok" href=""></a>
                 <a class="footer__socials__link tw" href=""></a>
               </div>
-              <div class="footer__pay"></div>
+              <div class="row footer__pay">
+                <img src="images/pay/5.png" alt="" />
+                <img src="images/pay/2.png" alt="" />
+                <img src="images/pay/1.png" alt="" />
+              </div>
+              <div class="row footer__pay">
+                <img src="images/pay/5.png" alt="" />
+                <img src="images/pay/4.png" alt="" />
+                <img src="images/pay/5.png" alt="" />
+              </div>
+              <div class="row footer__pay footer__pay__bottom">
+                <img src="images/pay/6.png" alt="" />
+                <img src="images/pay/6.png" alt="" />
+              </div>
             </div>
           </div>
         </div>

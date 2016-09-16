@@ -1,12 +1,71 @@
 mixin footer()
   footer.footer
-    .container-wrapper
-      .row.between
-        .col__20.footer__col__1
-          a(href="index.html").footer__logo
+    .container-wrapper.section__responsive
+      .row.between.footer__responsive
+        .col__21.footer__col__1
+          .footer__logo-wrapper
+            a(href="index.html").footer__logo
           p.footer__copy © 2016 Техно Дача 
           .footer__dev 
             span © разработчика
+        .footer__responsive__menu
+          ul.footer__acordion
+            li.footer__acordion__item
+              a(href="").footer__acordion__link Общее
+              ul.footer__acordion__sub-menu
+                li
+                  a(href="") Бренды
+                li
+                  a(href="") Клиентам
+                li
+                  a(href="") Оплата
+                li
+                  a(href="") Доставка
+                li
+                  a(href="") Сервис
+                li 
+                  a(href="") Контакты
+            li.footer__acordion__item 
+              a(href="").footer__acordion__link О компании
+              ul.footer__acordion__sub-menu
+                li
+                  a(href="") История
+                li
+                  a(href="") Достижения
+                li
+                  a(href="") Преимущества
+                li
+                  a(href="") Сертификаты
+                li
+                  a(href="") Вакансии
+                li 
+                  a(href="") Реквизиты
+            li.footer__acordion__item 
+              a(href="").footer__acordion__link Физическим лицам
+              ul.footer__acordion__sub-menu
+                li
+                  a(href="") Как сделать заказ
+                li
+                  a(href="") Конфиденциальность
+                li
+                  a(href="") Соглашение
+                li
+                  a(href="") Правила торговли
+                li
+                  a(href="") Гарантия на товары
+            li.footer__acordion__item 
+              a(href="").footer__acordion__link Юридическим лицам
+              ul.footer__acordion__sub-menu
+                li
+                  a(href="") Как сделать заказ
+                li
+                  a(href="") Оптовые условия
+                li
+                  a(href="") ерсональный менеджер
+                li
+                  a(href="") Гарантия на товары
+                li
+                  a(href="") Франшиза
         .col__60.row.between
           .footer__col
             ul.footer__col__menu 
@@ -63,11 +122,21 @@ mixin footer()
                 a.footer__link(href="") Гарантия на товары
               li.footer__item
                 a.footer__link(href="") Франшиза
-        .col__20.footer__col__3
+        .col__19.footer__col__3.center
           .footer__socials.row.between
             a(href="").footer__socials__link.vk
             a(href="").footer__socials__link.fb
             a(href="").footer__socials__link.g
             a(href="").footer__socials__link.ok
             a(href="").footer__socials__link.tw
-          .footer__pay
+          .row.footer__pay
+            img(src="images/pay/5.png", alt="")
+            img(src="images/pay/2.png", alt="")
+            img(src="images/pay/1.png", alt="")
+          .row.footer__pay
+            img(src="images/pay/5.png", alt="")
+            img(src="images/pay/4.png", alt="")
+            img(src="images/pay/5.png", alt="")
+          .row.footer__pay.footer__pay__bottom 
+            img(src="images/pay/6.png", alt="")
+            img(src="images/pay/6.png", alt="")

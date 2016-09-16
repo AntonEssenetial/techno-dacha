@@ -5,7 +5,7 @@ block content
   - var pageId = 0;
   +header()
   section.section__slider 
-    .container-wrapper
+    .container-wrapper.container-wrapper_responsive-slider
       .slider-wrapper
         .slick-slider-1
           - for ( var x = 0 ; x < 3 ; x ++ )
@@ -14,7 +14,7 @@ block content
   section.section__items
     .container-wrapper
       .f-container
-        .f__row 
+        .f__row.section__items_responsive
           .f__col.col__50
             .section__items__col.section__items__big-item
               .section__items__top
@@ -26,7 +26,7 @@ block content
                 span.section__items__old-price 250 000 ₽
                 span.section__items__price 232 900 ₽
                 a(href="").button.button_yellow.button_buy Купить
-          .f__col.col__25.row
+          .f__col.col__25.col__25_1000.row
             .section__items__col.section__items__mid-item 
               span.section__items__cat Бензопилы и электропилы
               h2 
@@ -35,7 +35,7 @@ block content
                 span.section__items__old-price 30 000 ₽
                 span.section__items__price 25 456 ₽
                 a(href="").button.button_yellow.button_buy Купить
-          .f__col.col__25
+          .f__col.col__25.col__25_responive.responsive__slider-5 
             .section__items__col.section__items__small
               span.section__items__cat Рубанки электрические
               h2 
@@ -54,14 +54,14 @@ block content
                 .row
                   span.section__items__price 4 599 ₽
                   a(href="").button_buy-small
-  section.section__discounts
+  section.section__discounts.section__responsive
     .container-wrapper
       .row.center.between
         h2 Акции скидки
         a(href="").view-all Смотреть все
-      .row.section__discounts__row
+      .section__discounts__row
         .f-container
-          .f__row 
+          .f__row.responsive__slider-3
             .f__col.col__25
               .section__item.section__item_present
                 .section__item__rate
@@ -151,9 +151,9 @@ block content
                   .col__right 
                     a(href="").like-button
                     a(href="").by-button
-  section.section__service
+  section.section__service.section__responsive
     .container-wrapper
-      .row.between 
+      .row.between.responsive__slider-2 
         .col__28.section__service__item
           .section__service__icon-1
           span.section__service__heading Сервис 24/7
@@ -166,7 +166,7 @@ block content
           .section__service__icon-3
           span.section__service__heading Доставка
           p Мы осуществляем доставку собственным транспортом. Также возможна доставка Почтой России и любой транспортной компанией. Все заказы дороже 100 000 рублей страхуются при отправлении за счет компании.
-  section.section__brands
+  section.section__brands.section__responsive
     .container-wrapper
       .row.center.between
         h2 Брэнды
@@ -177,7 +177,7 @@ block content
               .slide 
                 img(src="images/brands/1.jpg", alt="")
   section.section__about
-    .container-wrapper
+    .container-wrapper.section__responsive
       .row
         .col__50.col_margin-40.section__about__item
           span.section__about__heading Коси и забивай!
@@ -187,13 +187,13 @@ block content
         .col__50
           .section__about__img-wrapper
             img(src="images/background/1.png", alt="")
-  section.section__news
+  section.section__news.section__responsive
     .container-wrapper
       .row.center.between
         h2 Новости
         a(href="news.html").view-all Смотреть все
       .section__news__row 
-        .row.between
+        .row.between.responsive__slider-4
           - for (var x = 0 ; x < 4 ; x ++)
             .section__news__item.col__20
               .section__news__item__img 

@@ -66,7 +66,8 @@ body
       &:focus 
         max-width 150px
         transition max-width 0.3s ease-in-out
-  
+    .cart-white
+      color white
 
   &__bottom 
     background: grey
@@ -140,7 +141,27 @@ body
   background: #4b4b4b
   padding 30px 0
   
-
+  &__acordion__item 
+    line-height 35px
+  &__acordion__item.open 
+    span 
+      triangle(10px, 10px, top, yellow)
+  &__acordion__link 
+    color white
+    font-size 20px
+    position relative 
+    span 
+      position absolute
+      right -20px
+      top 12px
+      triangle(10px, 10px, bottom, yellow)
+  &__acordion__sub-menu
+    a 
+      color yellow
+      font-size 14px 
+      line-height 25px
+  &__responsive__menu 
+    display none
   &__col__str 
     color white
     font-size 16px
@@ -179,6 +200,17 @@ body
   &__pay
     static()
     align-self flex-end
+    text-align: right
+    .row 
+      justify-content flex-end
+    img 
+      height auto
+      display: inline-block
+      margin-left 2px
+      margin-bottom 2px
+    &__bottom 
+      margin-top 25px
+
 
 .section 
   
@@ -416,12 +448,14 @@ body
     
     &__row 
       padding 25px 0 0 0
+      margin-left -10px 
+      margin-right -10px
     .slide 
       width 151.5px
       border 2px solid #e6e5de
       border-radius (4px)
       padding 20px
-      margin-left 20px
+      margin 0 10px
       img 
         max-width 100%
     &__slider 
@@ -447,7 +481,7 @@ body
     .slick-prev, .slick-next
       top -43%
     .slick-next
-      right 0px
+      right 5px
       width auto 
       height auto
       

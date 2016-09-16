@@ -1,6 +1,68 @@
 $(document).ready(function() {
 
 
+  function createSlick(){  
+    $(".responsive__slider-2, .responsive__slider-3, .responsive__slider-4").not('.slick-initialized').slick({
+      infinite: true,
+      dots: true,
+      arrows: false,
+      autoplay: false,
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      focusOnSelect: true,
+      responsive: [
+        {
+          breakpoint: 1920,
+          settings: "unslick"
+        },
+        {
+          breakpoint: 916,
+          variableWidth: true,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            settings: "slick"
+          }
+        },
+        {
+          breakpoint: 605,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    }); 
+  };
+  function createSlick2() {
+    $('.responsive__slider-5').not('.slick-initialized').slick({
+      infinite: true,
+      dots: true,
+      arrows: false,
+      autoplay: false,
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      focusOnSelect: true,
+      responsive: [
+        {
+          breakpoint: 1920,
+          settings: "unslick"
+        },
+        {
+          breakpoint: 605,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    });
+  }
+  createSlick();
+  createSlick2();
+  $(window).on( 'resize', createSlick );
+  $(window).on( 'resize', createSlick2 );
+
   // Rating stars 
   $('.c-rating').rating();
 
@@ -16,23 +78,12 @@ $(document).ready(function() {
   };
   swtch('.jsTab', 'active', '.jsCont');
 
-  // // popup
-  // var popup = $('.popup')
-  // var close = $('.popup__close')
-  // $('.js__popup').click(function(event) {
-  //   popup.addClass('jsVisible');
-  // });
-  // close.click(function(event) {
-  //   popup.removeClass('jsVisible');
-  //   $(this).closest('.jsVisible').removeClass('jsVisible');
-  // });
-
 
   // Navgoco acordion
-  // var acordion = $()
-  // acordion.navgoco({accordion: true});
+  var acordion = $('.footer__acordion')
+  acordion.navgoco({accordion: true});
 
-  
+
   // Slick slider
   $('.slick-slider-1').slick({
     infinite: true,
@@ -49,19 +100,34 @@ $(document).ready(function() {
     slidesToShow: 7,
     slidesToScroll: 4,
     focusOnSelect: true,
-    variableWidth: true,
     responsive: [
       {
-        breakpoint: 600,
+        breakpoint: 1220,
+        variableWidth: true,
         settings: {
-          slidesToShow: 6,
+          slidesToShow: 5,
           slidesToScroll: 3
         }
       },
       {
-        breakpoint: 480,
+        breakpoint: 769,
+        variableWidth: true,
         settings: {
           slidesToShow: 4,
+          slidesToScroll: 3
+        }
+      },
+      {
+        breakpoint: 605,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 350,
+        settings: {
+          slidesToShow: 2,
           slidesToScroll: 2
         }
       }]
@@ -159,12 +225,12 @@ $(document).ready(function() {
   }
   
   $(window).load(function() {
-    equalheight();
+    equalheight('.section__service__item');
   });
   
   
   $(window).resize(function(){
-    equalheight();
+    equalheight('.section__service__item');
   });
 
 });
